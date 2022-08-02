@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Nantucket Orange Juice",
+    "price": 65.76,
+    "id": 1
+  },
+  {
+    "title": "Cheese - Grana Padano",
+    "price": 76.29,
+    "id": 2
+  },
+  {
+    "title": "Jam - Apricot",
+    "price": 10.78,
+    "id": 3
+  },
+  {
+    "title": "banana",
+    "price": 17.9,
+    "id": 4
+  },
+  {
+    "title": "pera",
+    "price": 14.9,
+    "id": 5
+  },
+  {
+    "title": "kiwi",
+    "price": 58.17,
+    "id": 6
+  },
+  {
+    "title": "naranja",
+    "price": "150",
+    "id": 7
+  },
+  {
+    "title": "uva",
+    "price": "55",
+    "id": 8
+  },
+  {
+    "title": "manzana",
+    "price": "55",
+    "id": 9
+  },
+  {
+    "title": "anana",
+    "price": "150.8",
+    "id": 10
+  }
+]
