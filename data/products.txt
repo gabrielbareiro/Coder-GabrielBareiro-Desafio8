@@ -43,10 +43,5 @@
     "title": "manzana",
     "price": "55",
     "id": 9
-  },
-  {
-    "title": "anana",
-    "price": "150.8",
-    "id": 10
   }
 ]

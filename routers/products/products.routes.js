@@ -87,14 +87,14 @@ router.put('/:id', (req, res) => {
  
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:idDelete', (req, res) => {
     const {
-        id
+        idDelete
     } = req.params;
-    const productIndex = productsParse.findIndex(product => product.id === +id);
+    const productIndex = productsParse.findIndex(product => product.id === +idDelete);
     if (productIndex < 0) return res.status(404).json({
         success: false,
-        error: `Product with id ${id} does not exist!`
+        error: `Product with id ${idDelete} does not exist!`
     });
     productsParse.splice(productIndex, 1);
     fs.writeFileSync('./data/products.txt', JSON.stringify(productsParse, null, 2))
