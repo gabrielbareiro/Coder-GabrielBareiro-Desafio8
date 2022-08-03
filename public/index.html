@@ -43,7 +43,7 @@
 
         <!-- Buscar un producto-->
 
-        <form class="container" action="api/products/" method="get" >
+        <form action="api/products" method="post" class="container">
             
             <label for="" class="form-label">Buscar producto por ID</label>
             <div class="input-group mb-3">
@@ -55,7 +55,7 @@
 
         <!-- Borrar un producto-->
 
-        <form action="api/products" class="container" method="delete">
+        <form action="api/products" class="container" method="post">
             <label for="" class="form-label">Borrar un producto por ID</label>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="">ID</span>

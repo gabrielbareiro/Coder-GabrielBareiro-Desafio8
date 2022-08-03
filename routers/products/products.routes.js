@@ -54,14 +54,8 @@ router.post('/',(req, res) => {
 
 router.put('/:id', (req, res) => {
     const {
-        params: {
-            id
-        },
-        body: {
-            title,
-            price,
-            
-        }
+        params: {id},
+        body: {title, price,}
     } = req;
     if (!title || !price ) {
         return res.status(400).json({
