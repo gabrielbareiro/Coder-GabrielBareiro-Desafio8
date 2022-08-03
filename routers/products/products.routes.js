@@ -22,7 +22,7 @@ router.get('/',(req, res) => {
 
 // api/products/:id
 
-router.get('/:id',(req, res) => {
+router.get('/:id', (req, res) => {
     const { id } = req.params;
     console.log(id);
     const getId = productsParse.find(num=> num.id === +id);
@@ -55,7 +55,10 @@ router.post('/',(req, res) => {
 router.put('/:id', (req, res) => {
     const {
         params: {id},
-        body: {title, price,}
+        body: {
+            title, 
+            price,
+        }
     } = req;
     if (!title || !price ) {
         return res.status(400).json({
