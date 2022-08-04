@@ -40,8 +40,8 @@
     "id": 8
   },
   {
-    "title": "manzana",
-    "price": "55",
+    "title": "banana",
+    "price": "220.80",
     "id": 9
   }
 ]

@@ -14,26 +14,26 @@ const getProducts = productsParse.map(p => p.title)
   
 // Routers
 
-router.get('/',(req, res) => {
+router
+    .get('/',(req, res) => {
     res.json(getProducts);
     console.log(getProducts)
-});
-
+    })
 
 // api/products/:id
 
-router.get('/:id', (req, res) => {
-    const { id } = req.params;
-    console.log(id);
+    .get('/:id', (req, res) => {
+    const { id } = req.query;
+    console.log(req);
     const getId = productsParse.find(num=> num.id === +id);
     if (!getId) {
         return res.status(404).json({ success: false, error: `Product with id: ${id} does not exist!`});
       }
       return res.json({ success: true, result: getId });
     
-});
+    })
 
-router.post('/',(req, res) => {
+    .post('/',(req, res) => {
     const {title, price} = req.body;
     if (!title || !price) {
         return res.status(400).json({
@@ -46,13 +46,15 @@ router.post('/',(req, res) => {
         price,
         id: productsParse.length + 1
     }
-    res.send(`product: ${newProduct.title}, price: ${newProduct.price}, id: ${newProduct.id}`);
+    res.send(`<h3>
+    product: ${newProduct.title}, price: ${newProduct.price}, id: ${newProduct.id}
+    </h3>`);
     productsParse.push(newProduct)
     fs.writeFileSync('./data/products.txt', JSON.stringify(productsParse, null, 2))
     console.log(productsParse)
-});
+    })
 
-router.put('/:id', (req, res) => {
+    .put('/:id', (req, res) => {
     const {
         params: {id},
         body: {
@@ -85,12 +87,13 @@ router.put('/:id', (req, res) => {
     });
     
  
-});
+    })
 
-router.delete('/:idDelete', (req, res) => {
+    .delete('/:idDelete', (req, res) => {
     const {
         idDelete
-    } = req.params;
+    } = req.query;
+    console.log(req.query)
     const productIndex = productsParse.findIndex(product => product.id === +idDelete);
     if (productIndex < 0) return res.status(404).json({
         success: false,
@@ -99,12 +102,12 @@ router.delete('/:idDelete', (req, res) => {
     productsParse.splice(productIndex, 1);
     fs.writeFileSync('./data/products.txt', JSON.stringify(productsParse, null, 2))
     console.log(productsParse)
+    
     return res.json({
         success: true,
         result: 'product correctly eliminated'
     });
-});
-
+    });
 
 
 
